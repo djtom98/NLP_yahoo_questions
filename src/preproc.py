@@ -2,9 +2,18 @@
 from datasets import load_dataset
 import pandas as pd
 import json
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+import string 
+stop = stopwords.words('english')
 
-data = load_dataset("../../NLP_yahoo_questions/tools/yahoo_answers_topics/yahoo_answers_topics.py")
 
+def get_dataset():
+    data = load_dataset("../../NLP_yahoo_questions/tools/yahoo_answers_topics/yahoo_answers_topics.py")
+    df=pd.DataFrame(data['train'])
+    df['text']=df['question_title']+df['question_content']+df['best_answer']
+    return df
 
 '''
 Dataset({
@@ -12,24 +21,18 @@ Dataset({
     num_rows: 1400000
 })
 '''
-#%%
 
-f = open('../../NLP_yahoo_questions/tools/yahoo_answers_topics/dataset_infos.json')
-f1    = json.load(f)
-f.close()
-topics=f1['yahoo_answers_topics']['features']['topic']['names']
-topics={k+1:v for k,v in enumerate(topics)}
+def get_topics():
+    f = open('../../NLP_yahoo_questions/tools/yahoo_answers_topics/dataset_infos.json')
+    f1    = json.load(f)
+    f.close()
+    topics=f1['yahoo_answers_topics']['features']['topic']['names']
+    topics={k+1:v for k,v in enumerate(topics)}
+    return topics
 
-df=pd.DataFrame(data['train'])
-df['text']=df['question_title']+df['question_content']+df['best_answer']
 
 ####preprocessing
 
-import nltk
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-import string 
-stop = stopwords.words('english')
 
 
 def process_series(series, stop):
