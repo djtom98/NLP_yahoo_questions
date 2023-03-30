@@ -15,6 +15,21 @@ In order to be less constrained by computational power and allow for more explor
 
 ### Baseline Model - Logistic Regression
 
+A baseline model is a simple model that serves as a starting point for building more complex models. It provides a reference point for evaluating the performance of more sophisticated models.
+In order to analize different starting points we defined two different baseline models.
+
+#### Ruled based model
+
++ Gets as inputs a dictionnary for each topic with the fifty most common words
++ For each sentence find the dictionary with more coincidences and classify the text under that topic
++ Calculate precision, recall, f1-score and the confusion matrix for the model
+
+#### TF-IDF + Logistic Regression
+
++ Create a bag of words with Count Vectorizer 
++ Use a TF-IDF transformer
++ Run a Logistic Regression
+
 ### RNN-LSTM
 
 ### BERT
@@ -28,7 +43,7 @@ We provide a comparison of the models based on the average precision, recall, an
 ### Performance Comparison
 |                      | Avg Precision | Avg Recall | Avg Accuracy |
 |----------------------|---------------|------------|--------------|
-| Baseline             |               |            |              |
+| Baseline             |    0.88       |            |              |
 | RNN                  |               |            |              |
 | Bert                 |     .896      |    .896    |     .896     |
 
