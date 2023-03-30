@@ -24,7 +24,8 @@ This network took the most time to train, yet in the end it yielded the best res
 
 # Analysis
 
-*A few examples with their predicted outputs for each of the three implementations - maybe with lime or something?*
+BERT Confusion Matrix:
+![Bert Confusion Matrix](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/BERT_CM.png)
 
 ### Performance Comparison
 |                      | Avg Precision | Avg Recall | Avg Accuracy |
@@ -32,6 +33,12 @@ This network took the most time to train, yet in the end it yielded the best res
 | Baseline             |               |            |              |
 | RNN                  |               |            |              |
 | Bert                 |     .896      |    .896    |     .896     |
+
+
+Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
+![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
+
+*A few examples with their predicted outputs for each of the three implementations - maybe with lime or something?*
 
 
 *A few examples with their predicted outputs for each of the three implementations
