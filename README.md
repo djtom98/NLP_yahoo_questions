@@ -18,6 +18,7 @@ In order to be less constrained by computational power and allow for more explor
 ### RNN-LSTM
 
 ### BERT
+To implement BERT, we used a package called ktrain. One of the pre-trained models included in ktrain is BERT, which stands for Bidirectional Encoder Representations from Transformers. BERT is a type of deep neural network that's been pre-trained on a large corpus of text data, using a technique called masked language modeling. This involves randomly masking out words from a sentence and training the model to predict the masked words based on the surrounding context.
 
 # Analysis
 
