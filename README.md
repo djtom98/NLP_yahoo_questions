@@ -28,7 +28,7 @@ In order to be less constrained by computational power and allow for more explor
 |----------------------|---------------|------------|--------------|
 | Baseline             |               |            |              |
 | RNN                  |               |            |              |
-| Bert                 |               |            |              |
+| Bert                 |     .896      |    .896    |     .896     |
 
 
 *A few examples with their predicted outputs for each of the three implementations
