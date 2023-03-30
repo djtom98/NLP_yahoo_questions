@@ -24,9 +24,7 @@ This network took the most time to train, yet in the end it yielded the best res
 
 # Analysis
 
-BERT Confusion Matrix:
-![Bert Confusion Matrix](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/BERT_CM.png)
-
+We provide a comparison of the models based on the average precision, recall, and accuracy for the three classes:
 ### Performance Comparison
 |                      | Avg Precision | Avg Recall | Avg Accuracy |
 |----------------------|---------------|------------|--------------|
@@ -38,14 +36,17 @@ BERT Confusion Matrix:
 Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
 ![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
 
-*A few examples with their predicted outputs for each of the three implementations - maybe with lime or something?*
-
-
 *A few examples with their predicted outputs for each of the three implementations
 Error Analysis of the models: where did it learn well / bad ?
 Comment the metrics: can you explain the metrics difference between implementations? Where do you stand regarding SOA/random classifiers?
 Biases: Try to identify any type of bias in the models
 Improve your BERT solution depending on error analysis, biases or other analysis you think is relevant*
 
+We can see from the confusion matrix that the BERT model did fairly well among all three classes, as the accuracy is well-balanced:
+![Bert Confusion Matrix](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/BERT_CM.png)
+
 # Discussion and Conclusion
 *Next steps: What are the main limitations of your models? What would be the next steps to improve it?*
+
+- We could train on all classes and see how it works.
+- Yahoo! Answers is a website that's no longer used- so this model is limited in the sense that it has no real external application.
