@@ -11,17 +11,17 @@ In order to be less constrained by computational power and allow for more explor
 
 ### Preprocessing
 
-data preprocessing:
-+ replace the topic number with its name to have a general understanding about the data
-+ remove the punctuation and stopwords
-+ remove the special characters (html tags) e.g '<br />' ,'\\n' with regex
-+ optional:stemming,lemmatization
-+ merge title, question and answer into one column
+Data preprocessing:
++ Replace the topic number with its name to have a general understanding about the data
++ Remove the punctuation and stopwords
++ Remove the special characters (html tags) e.g '<br />' , '\\n' with regex
++ Optional:stemming,lemmatization
++ Merge title, question and answer into one column
 
 EDA:
-+ plot histogram of topic distribution
-+ exploring NaN values in dataset
-+ word cloud:show the most frequent words in the all columns
++ Plot histogram of topic distribution
++ Exploring NaN values in dataset
++ Word cloud:show the most frequent words in the all columns and by topic
 
 # Models
 
