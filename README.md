@@ -8,7 +8,7 @@ We apply several models to the task of classification, including rule-based mode
 
 ### How to run this code?
 
-The summary.ipynb notebook contains an overview of the models used. This comes from combining the notebooks in the src folder, namely baseline_models.ipynb RNN.ipynb, and BERT.ipynb.
+The summary.ipynb notebook contains an overview of the models used. This comes from combining the notebooks in the src folder, namely data_preprocessing.ipynb, baseline_models.ipynb RNN.ipynb, and BERT.ipynb. Please note that you may need to change the path(s) to the 'yahoo_train.csv' file after writing the preprocessed data to a csv, depending on your specific directory.
 
 # Data
 
