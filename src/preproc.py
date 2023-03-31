@@ -36,7 +36,7 @@ def get_topics():
 
 
 def process_series(series, stop):
-    series = series.str.lower().str.replace('[^\w\s]', '').apply(lambda x: ' '.join([word for word in x.split() if word not in (stop)]))
+    series = series.str.lower().str.replace('[^\w\s]', ' ').apply(lambda x: ' '.join([word for word in x.split() if word not in (stop)]))
     return series
 
 
