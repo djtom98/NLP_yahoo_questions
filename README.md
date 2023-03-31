@@ -17,10 +17,10 @@ In order to be less constrained by computational power and allow for more explor
 
 # Models
 
-### Baseline Model - Logistic Regression
+### Baseline Model 
 
 A baseline model is a simple model that serves as a starting point for building more complex models. It provides a reference point for evaluating the performance of more sophisticated models.
-In order to analize different starting points we defined two different baseline models.
+In order to analize different starting points we defined three different baseline models.
 
 #### Ruled based model
 
@@ -33,6 +33,10 @@ In order to analize different starting points we defined two different baseline 
 + We create a bag of words with Count Vectorizer 
 + Then we used a TF-IDF transformer
 + Finally we run a Logistic Regression can calculate the metrics
+
+#### Decision Tree Classifier
+
++ Run a Decision Tree Classifier 
 
 ### RNN-LSTM
 
