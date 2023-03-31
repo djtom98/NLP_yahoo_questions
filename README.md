@@ -87,14 +87,23 @@ This suggests that the model is unbiased, as it doesn't perform particularly bad
 Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
 ![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
 
-# Discussion and Conclusion
+# Discussion
 Here we see BERT outperform RNN and logistic regression. The reason why BERT performs slightly better than logistic regression and RNN could be attributed to its ability to capture more nuanced features and contextual information from the text data. Since BERT is pre-trained on a large corpus of text data, it has a deeper understanding of the language structure and can capture more subtle relationships between words and phrases. 
 
-### Error analysis
+### Improvement - Data Augmentation
 Due to computational constraints we only used a subset of the data. As a result, it could be that the BERT model performs better using more training data. To investigate this hypothesis, we sample 150,000 observations from the original dataset, take 70% as the training dataset and train the BERT model once again.
 
+Below is a table comparing the original BERT model as well as the one trained using 70% of 150k samples:
+
+|                      | Avg Precision | Avg Recall | Avg Accuracy |
+|----------------------|---------------|------------|--------------|
+| Bert (100k sample)   |     .896      |    .896    |     .896     |
+| Bert (150k sample)   |     .897      |    .897    |     .897     |
+
+We can see that it performs slightly better. Based on this initial increase in the training set, we could expect that the performance would marginally increase by adding additional training data. One way to do this, assuming that additional training data is unavailable, is through synthetic data augmentation. This could take the form of back translation or synonym replacement, to allow for greater generalization.
+
 ### Limitations and next steps
-Because Yahoo! Answers is a website that's no longer used, this model is limited in the sense that it has no real external application.
+Because Yahoo! Answers is a website that's no longer used, this model is limited in the sense that it has no real external application. The next steps we could try would be to train on all ten classes and see how each of the models perform.
 
-The next steps we could try would be to train on all ten classes and see how each of the models perform.
-
+### Conclusion
+Overall, our project achieved promising results in classifying Yahoo! Answers posts into the topics of Health, Science & Mathematics, and Society & Culture. Our best-performing model, BERT, achieved an average precision, recall, and accuracy of .896 for the three classes. However, our study also has several limitations, including the limited sample size and the use of a pre-existing dataset with potential biases and limitations. Future research could explore additional preprocessing techniques, feature engineering, and model architectures to improve the performance and generalizability of the classification task.
