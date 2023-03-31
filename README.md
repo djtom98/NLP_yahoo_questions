@@ -6,7 +6,7 @@
 
 [Yahoo! Answers](https://en.wikipedia.org/wiki/Yahoo!_Answers) was a forum where users could ask and answer questions that other users have posted. These posts go under ‘topics’, which naturally allows for a classification task- classifying these posts to the correct topic based on textual content. Huggingface provides a [large dataset](https://huggingface.co/datasets/yahoo_answers_topics) comprised of 2 million Yahoo! Answers posts, which includes Topic, Question Title, Question Content, and Best Answer. Within this dataset, there are ten balanced topics/classes, namely:
 
-In order to be less constrained by computational power and allow for more exploration of the data and models, we select the first three topics. These topics are: Health, Science & Mathematics,  and Society & Culture. We also sample 100,000 rows from the dataset of 2 million.
+In order to be less constrained by computational power and allow for more exploration of the data and models, we select the first three topics. These topics are: Health, Science & Mathematics,  and Society & Culture. We also sample 100,000 rows from the dataset of 2 million. We split this sample of 100,000 observations into 70,000 training observations and 30,000 test observations.
 
 
 ### Preprocessing
@@ -69,26 +69,23 @@ Below we provide the probability of each class for the TF-IDF + Logistic Regress
 
 It's possible to see acording to the confusion matrix to the baseline model, that the correct predictions are well-balanced among all three topics.
 
-
 ## RNN Model
 From the below confusion matrix we can see that the RNN has well-balanced predictions, although the accuracy could be better.
 ![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/rnnconfusion.jpg)
 
 ## Bert Model
-Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
-![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
-
-*A few examples with their predicted outputs for each of the three implementations
-Error Analysis of the models: where did it learn well / bad ?
-Comment the metrics: can you explain the metrics difference between implementations? Where do you stand regarding SOA/random classifiers?
-Biases: Try to identify any type of bias in the models
-Improve your BERT solution depending on error analysis, biases or other analysis you think is relevant*
-
 We can see from the confusion matrix that the BERT model did fairly well among all three classes, as the accuracy is well-balanced:
 ![Bert Confusion Matrix](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/BERT_CM.png)
 
+Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
+![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
+
 # Discussion and Conclusion
-*Next steps: What are the main limitations of your models? What would be the next steps to improve it?*
+Here we see BERT outperform RNN and logistic regression. The reason why BERT performs slightly better than logistic regression and RNN could be attributed to its ability to capture more nuanced features and contextual information from the text data. Since BERT is pre-trained on a large corpus of text data, it has a deeper understanding of the language structure and can capture more subtle relationships between words and phrases. 
+
+### Error analysis
+Due to computational constraints we only used a subset of the data. As a result, it could be that the BERT model performs better using more training data. To investigate this hypothesis, we sample 150,000 observations from the original dataset, take 70% as the training dataset and train the BERT model once again.
+
 
 - We could train on all classes and see how it works.
 - Yahoo! Answers is a website that's no longer used- so this model is limited in the sense that it has no real external application.
