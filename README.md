@@ -11,6 +11,10 @@ In order to be less constrained by computational power and allow for more explor
 
 ### Preprocessing
 
++ The preprocessing consist in looks to clean the dataframe, check the unbalance between topics and the NaN values.
++ Generation of Wordclouds with the most common words, by variable and topic.
++ Save a clean dataframe to apply the models.
+
 # Models
 
 ### Baseline Model - Logistic Regression
