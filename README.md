@@ -26,9 +26,9 @@ In order to analize different starting points we defined two different baseline 
 
 #### TF-IDF + Logistic Regression
 
-+ Create a bag of words with Count Vectorizer 
-+ Use a TF-IDF transformer
-+ Run a Logistic Regression
++ We create a bag of words with Count Vectorizer 
++ Then we used a TF-IDF transformer
++ Finally we run a Logistic Regression can calculate the metrics
 
 ### RNN-LSTM
 
@@ -40,14 +40,20 @@ This network took the most time to train, yet in the end it yielded the best res
 # Analysis
 
 We provide a comparison of the models based on the average precision, recall, and accuracy for the three classes:
-### Performance Comparison
+## Performance Comparison
 |                      | Avg Precision | Avg Recall | Avg Accuracy |
 |----------------------|---------------|------------|--------------|
-| Baseline             |    0.88       |            |              |
+| Baseline             |     .880      |    .880    |     .880     |
 | RNN                  |               |            |              |
 | Bert                 |     .896      |    .896    |     .896     |
 
+## Baseline Model
+Below we provide the probability of each class for the TF-IDF + Logistic Regression model:
+![TF_IDF_Logistic_regression.png](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/TF_IDF_Logistic_regression.png)
 
+It's possible to see acording to the confusion matrix to the baseline model, that the correct predictions are well-balanced among all three topics.
+
+## Bert Model
 Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
 ![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/example_predictions.png)
 
