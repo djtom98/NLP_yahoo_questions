@@ -47,7 +47,7 @@ In order to analize different starting points we defined three different baselin
 + Run a Decision Tree Classifier 
 
 ### RNN-LSTM
-
+To implement RNN, we used the Keras package to create a neural network, by using LSTM layers which are part of the implementation. Embedding layer using Glove is also added to the model to improve the performance. Initially our performance with this was poor, so we added dropout layers, which seems to reduce overfitting, and we got a better performance as a result. 
 ### BERT
 To implement BERT, we used a package called ktrain. One of the pre-trained models included in ktrain is BERT, which stands for Bidirectional Encoder Representations from Transformers. BERT is a type of deep neural network that's been pre-trained on a large corpus of text data, using a technique called masked language modeling. This involves randomly masking out words from a sentence and training the model to predict the masked words based on the surrounding context.
 
@@ -60,7 +60,7 @@ We provide a comparison of the models based on the average precision, recall, an
 |                      | Avg Precision | Avg Recall | Avg Accuracy |
 |----------------------|---------------|------------|--------------|
 | Baseline             |     .880      |    .880    |     .880     |
-| RNN                  |               |            |              |
+| RNN                  |     .809      |    .808    |     .808     |
 | Bert                 |     .896      |    .896    |     .896     |
 
 ## Baseline Model
@@ -68,6 +68,11 @@ Below we provide the probability of each class for the TF-IDF + Logistic Regress
 ![TF_IDF_Logistic_regression.png](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/TF_IDF_Logistic_regression.png)
 
 It's possible to see acording to the confusion matrix to the baseline model, that the correct predictions are well-balanced among all three topics.
+
+
+## RNN Model
+From the below confusion matrix we can see that the RNN has well-balanced predictions, although the accuracy could be better.
+![example predictions](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/rnnconfusion.jpg)
 
 ## Bert Model
 Below we provide a few test prompts, the probability of each class, as well as the class with the highest probability for the BERT model:
