@@ -12,7 +12,7 @@ The summary.ipynb notebook contains an overview of the models used. This comes f
 
 # Data
 
-The Yahoo! Answers dataset includes ten balanced topics/classes. We select the first three topics for our classification task, as described in the Introduction section. In order to be less constrained by computational power and allow for more exploration of the data and models, we select the first three topics. These topics are: Health, Science & Mathematics,  and Society & Culture. We also sample 100,000 rows from the dataset of 2 million. We split this sample of 100,000 observations into 70,000 training observations and 30,000 test observations.
+The Yahoo! Answers dataset includes ten balanced topics/classes. As described in the Introduction section, we select the first three topics in order to be less constrained by computational power and allow for more exploration of the data and models. These topics are: Health, Science & Mathematics,  and Society & Culture. We also sample 100,000 rows from the dataset of 2 million. We split this sample of 100,000 observations into 70,000 training observations and 30,000 test observations.
 
 # Preprocessing
 
