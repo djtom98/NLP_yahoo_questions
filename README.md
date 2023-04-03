@@ -67,6 +67,8 @@ We provide a comparison of the models based on the average precision, recall, an
 | RNN                  |     .809      |    .808    |     .808     |
 | Bert                 |     .896      |    .896    |     .896     |
 
+Note that for Bert, the state of the art for the Yahoo! Answers dataset is around ![.77](https://paperswithcode.com/sota/text-classification-on-yahoo-answers) for 10 classes, though because we are using only three it's not quite comparable. 
+
 ## Baseline Model
 Below we provide the probability of each class for the TF-IDF + Logistic Regression model:
 ![TF_IDF_Logistic_regression.png](https://github.com/djtom98/NLP_yahoo_questions/blob/main/images/TF_IDF_Logistic_regression.png)
